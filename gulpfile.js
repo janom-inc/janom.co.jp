@@ -15,9 +15,9 @@ var replace    = require('gulp-replace');
 var uglify     = require('gulp-uglify');
 var awspublish = require('gulp-awspublish');
 
-gulp.task('upload-staging', ['dist'], function() {
+var upload = function(bucket) {
 	aws_credentials.params = {
-		Bucket: 'janom-web-staging',
+		Bucket: bucket,
 	};
 	var publisher = awspublish.create(aws_credentials);
 	return gulp
@@ -26,6 +26,14 @@ gulp.task('upload-staging', ['dist'], function() {
 		.pipe(publisher.cache())
 		.pipe(publisher.sync())
 		.pipe(awspublish.reporter());
+}
+
+gulp.task('upload-staging', ['dist'], function() {
+	return upload('staging.janom.co.jp');
+});
+
+gulp.task('upload-production', ['dist'], function() {
+	return upload('janom.co.jp');
 });
 
 gulp.task('dist-clean', function() {
