@@ -47,17 +47,23 @@ gulp.task('dist-copy', function() {
 		.pipe(gulp.dest('dist'))
 });
 
-gulp.task('dist-ejs', function() {
+var commitHash;
+
+gulp.task('commit-hash', function(cb) {
 	childProcess.exec('git rev-parse HEAD', function(error, stdout, stderr) {
-		var commitHash = stdout.trim();
-		return gulp
-			.src('src/ejs/**/*.ejs')
-			.pipe(ejs())
-			.pipe(replace('__GIT_COMMIT_HASH__', commitHash))
-			.pipe(minifyHTML({}))
-			.pipe(rename({extname: '.html'}))
-			.pipe(gulp.dest('dist'))
+		commitHash = stdout.trim();
+		cb();
 	});
+});
+
+gulp.task('dist-ejs', ['commit-hash'], function() {
+	return gulp
+		.src('src/ejs/**/*.ejs')
+		.pipe(ejs())
+		.pipe(replace('__GIT_COMMIT_HASH__', commitHash))
+		.pipe(minifyHTML({}))
+		.pipe(rename({extname: '.html'}))
+		.pipe(gulp.dest('dist'))
 });
 
 gulp.task('dist-js', function() {
