@@ -1,3 +1,5 @@
+<%# vim: set filetype=html: %>
+
 <!DOCTYPE html>
 <html>
 	<head>
@@ -9,10 +11,10 @@
 		<meta name="description" content="合同会社ジャノム|システム開発・ウェブ製作" />
 		<meta name="author" content="合同会社ジャノム" />
 		
-		<link rel="icon" type="image/vnd.microsoft.icon" href="favicon.ico" />
+		<link rel="icon" type="image/vnd.microsoft.icon" href="/favicon.ico" />
 		
 		<!-- Load CSS. -->
-		<link rel="stylesheet" href="css/bundle.min.css" />
+		<link rel="stylesheet" href="/css/bundle.min.css" />
 		
 		<!-- Load JavaScript library. -->
 		<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
@@ -23,19 +25,6 @@
 		
 		
 		<script type="text/javascript">
-			// For tab switching feature.
-			$(document).ready(function(){
-				if(window.location.hash){
-					$('a[href="#'+window.location.hash.substr(1).split('?')[0]+'"]').tab('show');
-				}else{
-					$('a[href="#home"]').tab('show');
-				}
-				$('a[data-toggle="tab"]').click(function (e){
-					$('#navbar-menu li').removeClass('active');
-					var href = $(this).attr('href');
-					window.location.hash = href;
-				});
-			});
 			// Fot open-in-a-new-tab.
 			$(document).ready(function() {
 				$('a[data-newtab]').prepend('<span class="glyphicon glyphicon-new-window" style="font-size:80%;"></span> ');
@@ -45,9 +34,9 @@
 		
 		<title>
 			<% if(typeof fullTitle != 'undefined') { %>
-				<%= fullTitle %>
+				<%- fullTitle %>
 			<% } else { %>
-				<%= locals.title %> | 合同会社ジャノム
+				<%- locals.title %> | 合同会社ジャノム
 			<% } %>
 		</title>
 		
@@ -64,26 +53,28 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-					<a class="navbar-brand" href="#home" data-toggle="tab">
-						<img src="img/logo+text.png" alt="logo" style="height:25px;" />
+					<a class="navbar-brand" href="/">
+						<img src="/img/logo+text.png" alt="logo" style="height:25px;" />
 					</a>
 				</div>
 				<!-- Collect the nav links, forms, and other content for toggling -->
 				<div class="collapse navbar-collapse" id="navbar-menu">
 					<ul class="nav navbar-nav">
-						<li class=""><a href="#company" data-toggle="tab"><span class="glyphicon glyphicon-scale"></span> 会社概要</a></li>
+						<li class=""><a href="/about.html"><span class="glyphicon glyphicon-scale"></span> 会社概要</a></li>
 						<li class="dropdown">
 							<a href="#services" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-pushpin"></span> 事業内容 <span class="caret"></span></a>
 							<ul class="dropdown-menu">
-								<li><a href="#services-cryptocurrency" data-toggle="tab">暗号通貨関連サービス</a></li>
-								<li><a href="#services-consulting" data-toggle="tab">ソリューション／コンサルティング</a></li>
+								<li><a href="/services/cryptocurrency.html">暗号通貨関連サービス</a></li>
+								<li><a href="/services/consulting.html">ソリューション／コンサルティング</a></li>
 							</ul>
 						</li>
 					</ul>
 					<ul class="nav navbar-nav navbar-right">
-						<li><a href="#inquiry" data-toggle="tab"><span class="glyphicon glyphicon-envelope"></span> お問い合わせ</a></li>
+						<li><a href="/contact.html"><span class="glyphicon glyphicon-envelope"></span> お問い合わせ</a></li>
 					</ul>
 				</div><!-- /.navbar-collapse -->
 			</div><!-- /.container-fluid -->
 		</nav>
+		
+		<div class="container">
 
