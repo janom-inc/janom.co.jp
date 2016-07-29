@@ -1,393 +1,305 @@
-<!DOCTYPE html>
-<html>
-	<head>
+
+<%- include('_include/00header.ejs', {fullTitle: '合同会社ジャノム | システム開発・ウェブ製作'}) %>
+
+<div class="tab-content container">
+	
+	<div class="tab-pane fade in active" id="home">
 		
-		<meta charset="utf-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<meta name="keyword" content="IT,computer,system,program,web" />
-		<meta name="description" content="合同会社ジャノム|システム開発・ウェブ製作" />
-		<meta name="author" content="合同会社ジャノム" />
-		
-		<link rel="icon" type="image/vnd.microsoft.icon" href="favicon.ico" />
-		
-		<!-- Load CSS. -->
-		<link rel="stylesheet" href="css/bundle.min.css" />
-		
-		<!-- Load JavaScript library. -->
-		<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
-		
-		<!-- Load Bootstrap. -->
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-		
-		
-		<script type="text/javascript">
-			// For tab switching feature.
-			$(document).ready(function(){
-				if(window.location.hash){
-					$('a[href="#'+window.location.hash.substr(1).split('?')[0]+'"]').tab('show');
-				}else{
-					$('a[href="#home"]').tab('show');
-				}
-				$('a[data-toggle="tab"]').click(function (e){
-					$('#navbar-menu li').removeClass('active');
-					var href = $(this).attr('href');
-					window.location.hash = href;
-				});
-			});
-			// Fot open-in-a-new-tab.
-			$(document).ready(function() {
-				$('a[data-newtab]').prepend('<span class="glyphicon glyphicon-new-window" style="font-size:80%;"></span> ');
-				$('a[data-newtab]').attr('target', '_blank');
-			});
-		</script>
-		
-		<title>合同会社ジャノム | システム開発・ウェブ製作</title>
-		
-	</head>
-	<body>
-		
-		<nav class="navbar navbar-default" role="navigation">
-			<div class="container">
-				<!-- Brand and toggle get grouped for better mobile display -->
-				<div class="navbar-header">
-					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-menu">
-						<span class="sr-only">Toggle navigation</span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-					</button>
-					<a class="navbar-brand" href="#home" data-toggle="tab">
-						<img src="img/logo+text.png" alt="logo" style="height:25px;" />
-					</a>
-				</div>
-				<!-- Collect the nav links, forms, and other content for toggling -->
-				<div class="collapse navbar-collapse" id="navbar-menu">
-					<ul class="nav navbar-nav">
-						<li class=""><a href="#company" data-toggle="tab"><span class="glyphicon glyphicon-scale"></span> 会社概要</a></li>
-						<li class="dropdown">
-							<a href="#services" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-pushpin"></span> 事業内容 <span class="caret"></span></a>
-							<ul class="dropdown-menu">
-								<li><a href="#services-cryptocurrency" data-toggle="tab">暗号通貨関連サービス</a></li>
-								<li><a href="#services-consulting" data-toggle="tab">ソリューション／コンサルティング</a></li>
-							</ul>
-						</li>
+		<div id="home-eyecatch">
+			<div class="row">
+				<div class="col-sm-1"></div>
+				<div class="col-sm-11"><h1><span>合同会社ジャノム</span></h1></div>
+			</div>
+			<div class="row">
+				<div class="col-sm-2"></div>
+				<div class="col-sm-10">
+					<ul>
+						<li><div><span class="glyphicon glyphicon-bitcoin"></span> 暗号通貨関連事業の開発・運営</div></li>
+						<li><div><span class="glyphicon glyphicon-cog"></span> 技術コンサルティング・研究開発</div></li>
+						<li><div><span class="glyphicon glyphicon-phone"></span> その他システム受託開発</div></li>
 					</ul>
-					<ul class="nav navbar-nav navbar-right">
-						<li><a href="#inquiry" data-toggle="tab"><span class="glyphicon glyphicon-envelope"></span> お問い合わせ</a></li>
-					</ul>
-				</div><!-- /.navbar-collapse -->
-			</div><!-- /.container-fluid -->
-		</nav>
-		
-		<div class="tab-content container">
-			
-			<div class="tab-pane fade in active" id="home">
-				
-				<div id="home-eyecatch">
-					<div class="row">
-						<div class="col-sm-1"></div>
-						<div class="col-sm-11"><h1><span>合同会社ジャノム</span></h1></div>
-					</div>
-					<div class="row">
-						<div class="col-sm-2"></div>
-						<div class="col-sm-10">
-							<ul>
-								<li><div><span class="glyphicon glyphicon-bitcoin"></span> 暗号通貨関連事業の開発・運営</div></li>
-								<li><div><span class="glyphicon glyphicon-cog"></span> 技術コンサルティング・研究開発</div></li>
-								<li><div><span class="glyphicon glyphicon-phone"></span> その他システム受託開発</div></li>
-							</ul>
-						</div>
-					</div>
 				</div>
-				
-				<div class="page-header">
-					<h2>
-						<span class="decoration-bar-1"></span>
-						<span class="decoration-bar-2"></span>
-						<span class="decoration-bar-3"></span>
-						お知らせ
-					</h2>
-				</div>
-				
-				<div class="row">
-					<div class="col-md-8">
-						<table id="news" class="table table-bordered">
-							<caption>
-								<p class="text-center">主要ニュース</p>
-							</caption>
-							<tbody>
-								<tr>
-									<th>2016/07/25</th>
-									<td>ビットコインハードウェアウォレットの米KeepKey社と提携し、日本国内での独占販売権を取得しました。またコインギフトにて販売を開始しました (<a href="https://coingift.jp/invoices/create/57908787-e2ec-4e55-905d-04f16c3db725" target="_blank">商品案内ページ</a>／<a href="/pdf/releases/20160725_keepkey_exclusive_reseller.pdf" target="_blank">報道関係者向け資料 [PDF]</a>)</td>
-								</tr>
-								<tr>
-									<th>2016/06/06</th>
-									<td>株式会社セレス(東証マザーズ 3696)様との業務提携を行いました (<a href="https://t.co/vOQuUHfSo7" target="_blank">セレス様発表資料 [PDF]</a>)</td>
-								</tr>
-								<tr>
-									<th>2016/03/08</th>
-									<td>事業内容ページを作成</td>
-								</tr>
-								<tr>
-									<th>2014/11/01</th>
-									<td>ウェブページ公開</td>
-								</tr>
-								<tr>
-									<th>2014/10/06</th>
-									<td>会社設立</td>
-								</tr>
-							</tbody>
-						</table>
-					</div>
-					<div class="col-md-4">
-						<a class="twitter-timeline" data-lang="ja" data-theme="light" href="https://twitter.com/janom_llc">Tweets by janom_llc</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-					</div>
-				</div>
-				
 			</div>
-			
-			<div class="tab-pane fade" id="company">
-				<div class="page-header">
-					<h1>
-						<span class="decoration-bar-1"></span>
-						<span class="decoration-bar-2"></span>
-						<span class="decoration-bar-3"></span>
-						会社概要
-					</h1>
-				</div>
-				<table id="company" class="table table-bordered">
-					<tr>
-						<th>会社名</th>
-						<td>合同会社ジャノム (Janom LLC)</td>
-					</tr>
-					<tr>
-						<th>主要メンバ</th>
-						<td><img src="img/company_members.png" alt="主要メンバ" style="height:1.5ex;" /></td>
-					</tr>
-					<tr>
-						<th>設立</th>
-						<td>2014年10月</td>
-					</tr>
-					<tr>
-						<th>本社所在地</th>
-						<td>
-							<div>
-								〒112-0003<br />
-								東京都文京区春日2-20-1<br />
-								Dクレスト 3-B
-							</div>
-							<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5608.0588447210575!2d139.74281348313156!3d35.7104023771002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188c4dcc8f4541%3A0xa3380a7cdeeeee72!2z5ZCI5ZCM5Lya56S-44K444Oj44OO44Og!5e0!3m2!1sja!2sjp!4v1469774417984" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
-						</td>
-					</tr>
-					<tr>
-						<th>本店登記地</th>
-						<td>
-							<p><img src="img/company_address.png" alt="本店登記地" style="height:5.5ex;" /></p>
-							<p>※こちらは打ち合わせ等の行えるスペースはありませんので、ご用のある方は上記「本社所在地」までお越しください</p>
-						</td>
-					</tr>
-					<tr>
-						<th>事業内容</th>
-						<td>
-							<ul>
-								<li>暗号通貨(Bitcoin)・仮想通貨・ブロックチェインに関連した自社サービス開発運営、コンサルティング</li>
-								<li>システム開発・ウェブ製作</li>
-							</ul>
-						</td>
-					</tr>
-				</table>
-			</div>
-			
-			<div class="tab-pane fade" id="services-cryptocurrency">
-				
-				<div class="page-header">
-					<h1>
-						<span class="decoration-bar-1"></span>
-						<span class="decoration-bar-2"></span>
-						<span class="decoration-bar-3"></span>
-						事業内容 &raquo; 暗号通貨関連サービス
-					</h1>
-				</div>
-				
-				<div class="row">
-					<div class="col-sm-6 col-md-4">
-						<div class="thumbnail" style="min-height:550px;">
-							<img src="img/services/coingift_logo.png" style="max-width:200px;" />
-							<div class="caption">
-								<h3><a href="https://coingift.jp/" data-newtab>コインギフト</a></h3>
-								<p>Bitcoin や Monacoin 建てで様々なギフト券を購入することのできるウェブサービス。</p>
-								<p>多くの EC サービスでありがちな面倒な会員登録作業などは一切なく、非常に簡単かつ瞬時に様々な暗号通貨・仮想通貨をギフト券に交換し、現実世界でお買い物ができる。</p>
-								<p>コインギフトのバックエンドは<a href="http://www.slideshare.net/visvirial/ss-48736619" data-newtab>非常に軽量・セキュア・スケーラブルな設計</a>となっており、バックエンドを転用した EC サービスの新規立ち上げなども行っている。（詳細は<a href="#inquiry" data-toggle="tab">お問い合わせ</a>ください）</p>
-							</div>
-						</div>
-					</div>
-					<div class="col-sm-6 col-md-4">
-						<div class="thumbnail" style="min-height:550px;">
-							<img src="img/services/monatr_logo.png" style="max-width:200px;" />
-							<div class="caption">
-								<h3><a href="https://monatr.jp/" data-newtab>もなとれ</a></h3>
-								<p>Monacoin を中心とする、国内最古の暗号通貨交換所。</p>
-								<p>2014年1月の Monacoin リリース後すぐに運営が開始され、その後の Mt.Gox 社の破綻により現存する国内取引所の中では最古の取引所となる。</p>
-								<p>国内で開発された暗号通貨を多数取り扱っているのが特徴。</p>
-							</div>
-						</div>
-					</div>
-					<div class="col-sm-6 col-md-4">
-						<div class="thumbnail" style="min-height:550px;">
-							<img src="img/services/asicpool_screenshot.png" />
-							<div class="caption">
-								<h3><a href="https://asicpool.info/" data-newtab>ASICpool.info</a></h3>
-								<p>Monacoin 専用の世界最大（2016年3月時点）マイニングプール。</p>
-								<p>接続先サーバを日本・ヨーロッパ・アメリカと世界各地に分散させており、採掘機の場所に応じて最適な接続先を選択できるのが特徴。</p>
-								<p>採掘能力に応じた接続先ポートを複数用意することで、クラウドマイニングサービスを利用した大採掘能力を持った採掘者にいち早く対応した。</p>
-							</div>
-						</div>
-					</div>
-					<div class="col-sm-6 col-md-4">
-						<div class="thumbnail" style="min-height:550px;">
-							<img src="img/services/anban_screenshot.png" style="max-width:200px;border-radius:20px;" />
-							<div class="caption">
-								<h3><a href="https://anban.info/" data-newtab>暗号通貨長者番付</a></h3>
-								<p>国内暗号通貨（Monacoin、Kumacoin等）に特化した保有数ランキング掲載サイト。</p>
-								<p>公開鍵暗号の仕組みを利用した、自己の保有するアドレスへのタグ付けなどの独創的な機能を採用している。</p>
-								<p>独自にカスタマイズしたソフトウェアを利用して暗号通貨クライアントソフトの吐き出すデータファイルを解析・集計し、一日毎に自動的にランキングの更新を行っている。</p>
-							</div>
-						</div>
-					</div>
-					<div class="col-sm-6 col-md-4">
-						<div class="thumbnail" style="min-height:550px;">
-							<img src="img/services/crypto-users-logo-square.png" style="max-width:200px;" />
-							<div class="caption">
-								<h3>その他</h3>
-								<p>弊社メンバは、Bitcoinコアクライアントの翻訳・暗号通貨ユーザ会（オープンソース系イベントへの参加を中心として活動中）の立ち上げ・Monacoin Foundation（Monacoin関連のイベント・勉強会・オフ会を運営）など、暗号通貨の普及活動を積極的に行っている。</p>
-								<p>また、高機能かつデザイン性の高いブレインウォレット「<a href="https://offlinewallet.info/" data-newtab>OfflineWallet.info</a>」や、Monacoin および Bitcoin に対応したブロックエクスプローラ「<a href="http://chainsight.info/" data-newtab>chainsight.info</a>」など、他にも様々なサービスを展開している。</p>
-							</div>
-						</div>
-					</div>
-				</div>
-				
-			</div>
-			
-			<div class="tab-pane fade" id="services-consulting">
-				
-				<div class="page-header">
-					<h1>
-						<span class="decoration-bar-1"></span>
-						<span class="decoration-bar-2"></span>
-						<span class="decoration-bar-3"></span>
-						事業内容 &raquo; ソリューション／コンサルティング
-					</h1>
-				</div>
-				
-				<div class="page-header">
-					<h2>暗号通貨・仮想通貨関連</h2>
-				</div>
-				
-				<p>国内でも最高峰の暗号通貨の知識や実務経験をもとに、ブロックチェイン等を用いた新規事業の創出・既存プロダクトのセキュリティ強化・既存業務の効率改善等を行います。</p>
-				
-				<div class="row">
-					<div class="col-sm-6 col-md-6">
-						<div class="panel panel-default">
-							<div class="panel-heading">暗号通貨・仮想通貨プロダクト開発支援</div>
-							<div class="panel-body">
-								<p>Bitcoin や Ripple、ブロックチェインを用いた新規事業創出・業務改善等の支援を行います。</p>
-								<ul>
-									<li>暗号通貨・仮想通貨・ブロックチェイン技術を用いた実証実験の提案および実施</li>
-									<li>暗号通貨関連事業の立ち上げに際し、最適な設計（スケーラブル、軽量、高い拡張性等）の提案および制作</li>
-									<li>コイン盗難防止等セキュリティ対策の提案および実施</li>
-								</ul>
-							</div>
-						</div>
-					</div>
-					<div class="col-sm-6 col-md-6">
-						<div class="panel panel-default">
-							<div class="panel-heading">暗号通貨・仮想通貨レクチャー</div>
-							<div class="panel-body">
-								<p>暗号通貨やブロックチェインの基本的な仕組みについてのレクチャーや最新技術解説等を行い、御社技術者の知識向上に対する支援を行います。</p>
-								<ul>
-									<li><a href="https://bitcoin.org/bitcoin.pdf" data-newtab>Bitcoin 原論文</a>の解説（<a href="https://monatr.jp/publications/offlinemeeting20140315/what-is-the-cryptocurrency_20140318.pdf" data-newtab>参考スライド資料（古）</a>）</li>
-									<li>Bitcoin のウォレット機能（入金・出金）の実装方法についてのレクチャー</li>
-									<li>Lightning Network 等の Bitcoin スケーラビリティ改善案の技術解説</li>
-									<li>セキュリティ（ECDSAやハッシュ関数の安全性等）、プライバシー（送金者や送金額の秘匿化技術等）に関する最新動向解説（<a href="http://www.slideshare.net/visvirial/bitcoinbitcoin20150720" data-newtab>参考スライド資料</a>）</li>
-								</ul>
-							</div>
-						</div>
-					</div>
-				</div>
-				
-				<div class="page-header">
-					<h2>コンピューティング最適化・高性能計算</h2>
-				</div>
-				
-				<p>御社ソフトウェアで利用されている既存処理コードの最適化・アルゴリズム改善・スーパーコンピュータ（スパコン）や GPU クラスタを用いた計算処理最適化などを行います。</p>
-				
-				<div class="row">
-					<div class="col-sm-6 col-md-6">
-						<div class="panel panel-default">
-							<div class="panel-heading">コード・アルゴリズム最適化</div>
-							<div class="panel-body">
-								<p>御社ソフトウェアで利用されている、もしくは利用を検討中のコードやアルゴリズムに対し、計算処理の実行を行うハードウェアアーキテクチャにあわせた最適化を行い、計算能力を最大限まで引き出します。これにより、計算時間の短縮によるユーザビリティ向上・サーバ負荷軽減によるコスト削減効果等が追加のハードウェア投資なしで実現できます。</p>
-								<ul>
-									<li><b>利用アルゴリズムの再検討。</b>効率的な代替アルゴリズムの提案および実装を行います</li>
-									<li><b>コードのプロファイリングと最適化。</b>マルチコア対応、SIMD化、キャッシュ利用効率向上等を実施し、追加のハードウェア投資なしでスピードアップを図ります</li>
-								</ul>
-							</div>
-						</div>
-					</div>
-					<div class="col-sm-6 col-md-6">
-						<div class="panel panel-default">
-							<div class="panel-heading">スパコンやGPUへの対応</div>
-							<div class="panel-body">
-								<p>計算処理の、スパコンやクラスタ・GPUへの対応を行います。これにより従来の計算時間と比べて最大で数十倍ものスピードアップが可能となり、研究開発サイクルの短縮・ユーザビリティ向上等が実現できます。Amazon Web Service (AWS) などを用いることで、自社でハードウェアを持たないことによるコスト削減のご提案も可能です。</p>
-								<ul>
-									<li><b>既存コードのスパコン・クラスタ・GPU対応。</b>メニーコアプログラミングの領域では、長年の知識や経験なしでは効率の良いコードは書けません。熱統計物理学の数値計算研究を行ってきた経験をもとに、計算を実行するハードウェアにあわせた最適化を行い、その性能を最大限まで引き出します</li>
-									<li><b>GPGPU 処理コードの最適化。</b>単純に GPU で計算を行うようにしただけでは、多くの場合には GPU の性能を引き出せないばかりか、むしろ CPU よりも遅くなってしまう場合もあります。そのようなコードに対して最適化を行いハードウェアの性能を最大限まで引き出します</li>
-								</ul>
-							</div>
-						</div>
-					</div>
-				</div>
-				
-				<div class="page-header">
-					<h2>システム製作</h2>
-				</div>
-				
-				<p>多数の製作実績・運用経験をもとに、高信頼かつスケーラブルなシステムの製作を行います。</p>
-				
-				<ul>
-					<li>新規ウェブシステムの開発</li>
-					<li>既存システムの改修・メンテナンス</li>
-					<li>数値計算ライブラリの製作</li>
-					<li>組み込みハードウェアの開発・製作</li>
-				</ul>
-				
-			</div>
-			
-			<div class="tab-pane fade" id="inquiry">
-				<div class="page-header">
-					<h1>
-						<span class="decoration-bar-1"></span>
-						<span class="decoration-bar-2"></span>
-						<span class="decoration-bar-3"></span>
-						お問い合わせ
-					</h1>
-				</div>
-				<p>以下のメールアドレスよりお問い合わせください。</p>
-				<blockquote>info [-at-] janom.co.jp</blockquote>
-				<p>（[-at-] をアットマークに置き換えてください）</p>
-			</div>
-			
 		</div>
 		
-		<footer>
-			<div class="container">
-				<p>Copyright &copy; Janom LLC 2014-2016. All rights reserved.</p>
-				<p style="font-size:70%;">version: __GIT_COMMIT_HASH__</p>
-			</div>
-		</footer>
+		<div class="page-header">
+			<h2>
+				<span class="decoration-bar-1"></span>
+				<span class="decoration-bar-2"></span>
+				<span class="decoration-bar-3"></span>
+				お知らせ
+			</h2>
+		</div>
 		
-	</body>
-</html>
+		<div class="row">
+			<div class="col-md-8">
+				<table id="news" class="table table-bordered">
+					<caption>
+						<p class="text-center">主要ニュース</p>
+					</caption>
+					<tbody>
+						<tr>
+							<th>2016/07/25</th>
+							<td>ビットコインハードウェアウォレットの米KeepKey社と提携し、日本国内での独占販売権を取得しました。またコインギフトにて販売を開始しました (<a href="https://coingift.jp/invoices/create/57908787-e2ec-4e55-905d-04f16c3db725" target="_blank">商品案内ページ</a>／<a href="/pdf/releases/20160725_keepkey_exclusive_reseller.pdf" target="_blank">報道関係者向け資料 [PDF]</a>)</td>
+						</tr>
+						<tr>
+							<th>2016/06/06</th>
+							<td>株式会社セレス(東証マザーズ 3696)様との業務提携を行いました (<a href="https://t.co/vOQuUHfSo7" target="_blank">セレス様発表資料 [PDF]</a>)</td>
+						</tr>
+						<tr>
+							<th>2016/03/08</th>
+							<td>事業内容ページを作成</td>
+						</tr>
+						<tr>
+							<th>2014/11/01</th>
+							<td>ウェブページ公開</td>
+						</tr>
+						<tr>
+							<th>2014/10/06</th>
+							<td>会社設立</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="col-md-4">
+				<a class="twitter-timeline" data-lang="ja" data-theme="light" href="https://twitter.com/janom_llc">Tweets by janom_llc</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+			</div>
+		</div>
+		
+	</div>
+	
+	<div class="tab-pane fade" id="company">
+		<div class="page-header">
+			<h1>
+				<span class="decoration-bar-1"></span>
+				<span class="decoration-bar-2"></span>
+				<span class="decoration-bar-3"></span>
+				会社概要
+			</h1>
+		</div>
+		<table id="company" class="table table-bordered">
+			<tr>
+				<th>会社名</th>
+				<td>合同会社ジャノム (Janom LLC)</td>
+			</tr>
+			<tr>
+				<th>主要メンバ</th>
+				<td><img src="img/company_members.png" alt="主要メンバ" style="height:1.5ex;" /></td>
+			</tr>
+			<tr>
+				<th>設立</th>
+				<td>2014年10月</td>
+			</tr>
+			<tr>
+				<th>本社所在地</th>
+				<td>
+					<div>
+						〒112-0003<br />
+						東京都文京区春日2-20-1<br />
+						Dクレスト 3-B
+					</div>
+					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5608.0588447210575!2d139.74281348313156!3d35.7104023771002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188c4dcc8f4541%3A0xa3380a7cdeeeee72!2z5ZCI5ZCM5Lya56S-44K444Oj44OO44Og!5e0!3m2!1sja!2sjp!4v1469774417984" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+				</td>
+			</tr>
+			<tr>
+				<th>本店登記地</th>
+				<td>
+					<p><img src="img/company_address.png" alt="本店登記地" style="height:5.5ex;" /></p>
+					<p>※こちらは打ち合わせ等の行えるスペースはありませんので、ご用のある方は上記「本社所在地」までお越しください</p>
+				</td>
+			</tr>
+			<tr>
+				<th>事業内容</th>
+				<td>
+					<ul>
+						<li>暗号通貨(Bitcoin)・仮想通貨・ブロックチェインに関連した自社サービス開発運営、コンサルティング</li>
+						<li>システム開発・ウェブ製作</li>
+					</ul>
+				</td>
+			</tr>
+		</table>
+	</div>
+	
+	<div class="tab-pane fade" id="services-cryptocurrency">
+		
+		<div class="page-header">
+			<h1>
+				<span class="decoration-bar-1"></span>
+				<span class="decoration-bar-2"></span>
+				<span class="decoration-bar-3"></span>
+				事業内容 &raquo; 暗号通貨関連サービス
+			</h1>
+		</div>
+		
+		<div class="row">
+			<div class="col-sm-6 col-md-4">
+				<div class="thumbnail" style="min-height:550px;">
+					<img src="img/services/coingift_logo.png" style="max-width:200px;" />
+					<div class="caption">
+						<h3><a href="https://coingift.jp/" data-newtab>コインギフト</a></h3>
+						<p>Bitcoin や Monacoin 建てで様々なギフト券を購入することのできるウェブサービス。</p>
+						<p>多くの EC サービスでありがちな面倒な会員登録作業などは一切なく、非常に簡単かつ瞬時に様々な暗号通貨・仮想通貨をギフト券に交換し、現実世界でお買い物ができる。</p>
+						<p>コインギフトのバックエンドは<a href="http://www.slideshare.net/visvirial/ss-48736619" data-newtab>非常に軽量・セキュア・スケーラブルな設計</a>となっており、バックエンドを転用した EC サービスの新規立ち上げなども行っている。（詳細は<a href="#inquiry" data-toggle="tab">お問い合わせ</a>ください）</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-6 col-md-4">
+				<div class="thumbnail" style="min-height:550px;">
+					<img src="img/services/monatr_logo.png" style="max-width:200px;" />
+					<div class="caption">
+						<h3><a href="https://monatr.jp/" data-newtab>もなとれ</a></h3>
+						<p>Monacoin を中心とする、国内最古の暗号通貨交換所。</p>
+						<p>2014年1月の Monacoin リリース後すぐに運営が開始され、その後の Mt.Gox 社の破綻により現存する国内取引所の中では最古の取引所となる。</p>
+						<p>国内で開発された暗号通貨を多数取り扱っているのが特徴。</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-6 col-md-4">
+				<div class="thumbnail" style="min-height:550px;">
+					<img src="img/services/asicpool_screenshot.png" />
+					<div class="caption">
+						<h3><a href="https://asicpool.info/" data-newtab>ASICpool.info</a></h3>
+						<p>Monacoin 専用の世界最大（2016年3月時点）マイニングプール。</p>
+						<p>接続先サーバを日本・ヨーロッパ・アメリカと世界各地に分散させており、採掘機の場所に応じて最適な接続先を選択できるのが特徴。</p>
+						<p>採掘能力に応じた接続先ポートを複数用意することで、クラウドマイニングサービスを利用した大採掘能力を持った採掘者にいち早く対応した。</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-6 col-md-4">
+				<div class="thumbnail" style="min-height:550px;">
+					<img src="img/services/anban_screenshot.png" style="max-width:200px;border-radius:20px;" />
+					<div class="caption">
+						<h3><a href="https://anban.info/" data-newtab>暗号通貨長者番付</a></h3>
+						<p>国内暗号通貨（Monacoin、Kumacoin等）に特化した保有数ランキング掲載サイト。</p>
+						<p>公開鍵暗号の仕組みを利用した、自己の保有するアドレスへのタグ付けなどの独創的な機能を採用している。</p>
+						<p>独自にカスタマイズしたソフトウェアを利用して暗号通貨クライアントソフトの吐き出すデータファイルを解析・集計し、一日毎に自動的にランキングの更新を行っている。</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-6 col-md-4">
+				<div class="thumbnail" style="min-height:550px;">
+					<img src="img/services/crypto-users-logo-square.png" style="max-width:200px;" />
+					<div class="caption">
+						<h3>その他</h3>
+						<p>弊社メンバは、Bitcoinコアクライアントの翻訳・暗号通貨ユーザ会（オープンソース系イベントへの参加を中心として活動中）の立ち上げ・Monacoin Foundation（Monacoin関連のイベント・勉強会・オフ会を運営）など、暗号通貨の普及活動を積極的に行っている。</p>
+						<p>また、高機能かつデザイン性の高いブレインウォレット「<a href="https://offlinewallet.info/" data-newtab>OfflineWallet.info</a>」や、Monacoin および Bitcoin に対応したブロックエクスプローラ「<a href="http://chainsight.info/" data-newtab>chainsight.info</a>」など、他にも様々なサービスを展開している。</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+	</div>
+	
+	<div class="tab-pane fade" id="services-consulting">
+		
+		<div class="page-header">
+			<h1>
+				<span class="decoration-bar-1"></span>
+				<span class="decoration-bar-2"></span>
+				<span class="decoration-bar-3"></span>
+				事業内容 &raquo; ソリューション／コンサルティング
+			</h1>
+		</div>
+		
+		<div class="page-header">
+			<h2>暗号通貨・仮想通貨関連</h2>
+		</div>
+		
+		<p>国内でも最高峰の暗号通貨の知識や実務経験をもとに、ブロックチェイン等を用いた新規事業の創出・既存プロダクトのセキュリティ強化・既存業務の効率改善等を行います。</p>
+		
+		<div class="row">
+			<div class="col-sm-6 col-md-6">
+				<div class="panel panel-default">
+					<div class="panel-heading">暗号通貨・仮想通貨プロダクト開発支援</div>
+					<div class="panel-body">
+						<p>Bitcoin や Ripple、ブロックチェインを用いた新規事業創出・業務改善等の支援を行います。</p>
+						<ul>
+							<li>暗号通貨・仮想通貨・ブロックチェイン技術を用いた実証実験の提案および実施</li>
+							<li>暗号通貨関連事業の立ち上げに際し、最適な設計（スケーラブル、軽量、高い拡張性等）の提案および制作</li>
+							<li>コイン盗難防止等セキュリティ対策の提案および実施</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-6 col-md-6">
+				<div class="panel panel-default">
+					<div class="panel-heading">暗号通貨・仮想通貨レクチャー</div>
+					<div class="panel-body">
+						<p>暗号通貨やブロックチェインの基本的な仕組みについてのレクチャーや最新技術解説等を行い、御社技術者の知識向上に対する支援を行います。</p>
+						<ul>
+							<li><a href="https://bitcoin.org/bitcoin.pdf" data-newtab>Bitcoin 原論文</a>の解説（<a href="https://monatr.jp/publications/offlinemeeting20140315/what-is-the-cryptocurrency_20140318.pdf" data-newtab>参考スライド資料（古）</a>）</li>
+							<li>Bitcoin のウォレット機能（入金・出金）の実装方法についてのレクチャー</li>
+							<li>Lightning Network 等の Bitcoin スケーラビリティ改善案の技術解説</li>
+							<li>セキュリティ（ECDSAやハッシュ関数の安全性等）、プライバシー（送金者や送金額の秘匿化技術等）に関する最新動向解説（<a href="http://www.slideshare.net/visvirial/bitcoinbitcoin20150720" data-newtab>参考スライド資料</a>）</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="page-header">
+			<h2>コンピューティング最適化・高性能計算</h2>
+		</div>
+		
+		<p>御社ソフトウェアで利用されている既存処理コードの最適化・アルゴリズム改善・スーパーコンピュータ（スパコン）や GPU クラスタを用いた計算処理最適化などを行います。</p>
+		
+		<div class="row">
+			<div class="col-sm-6 col-md-6">
+				<div class="panel panel-default">
+					<div class="panel-heading">コード・アルゴリズム最適化</div>
+					<div class="panel-body">
+						<p>御社ソフトウェアで利用されている、もしくは利用を検討中のコードやアルゴリズムに対し、計算処理の実行を行うハードウェアアーキテクチャにあわせた最適化を行い、計算能力を最大限まで引き出します。これにより、計算時間の短縮によるユーザビリティ向上・サーバ負荷軽減によるコスト削減効果等が追加のハードウェア投資なしで実現できます。</p>
+						<ul>
+							<li><b>利用アルゴリズムの再検討。</b>効率的な代替アルゴリズムの提案および実装を行います</li>
+							<li><b>コードのプロファイリングと最適化。</b>マルチコア対応、SIMD化、キャッシュ利用効率向上等を実施し、追加のハードウェア投資なしでスピードアップを図ります</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-6 col-md-6">
+				<div class="panel panel-default">
+					<div class="panel-heading">スパコンやGPUへの対応</div>
+					<div class="panel-body">
+						<p>計算処理の、スパコンやクラスタ・GPUへの対応を行います。これにより従来の計算時間と比べて最大で数十倍ものスピードアップが可能となり、研究開発サイクルの短縮・ユーザビリティ向上等が実現できます。Amazon Web Service (AWS) などを用いることで、自社でハードウェアを持たないことによるコスト削減のご提案も可能です。</p>
+						<ul>
+							<li><b>既存コードのスパコン・クラスタ・GPU対応。</b>メニーコアプログラミングの領域では、長年の知識や経験なしでは効率の良いコードは書けません。熱統計物理学の数値計算研究を行ってきた経験をもとに、計算を実行するハードウェアにあわせた最適化を行い、その性能を最大限まで引き出します</li>
+							<li><b>GPGPU 処理コードの最適化。</b>単純に GPU で計算を行うようにしただけでは、多くの場合には GPU の性能を引き出せないばかりか、むしろ CPU よりも遅くなってしまう場合もあります。そのようなコードに対して最適化を行いハードウェアの性能を最大限まで引き出します</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="page-header">
+			<h2>システム製作</h2>
+		</div>
+		
+		<p>多数の製作実績・運用経験をもとに、高信頼かつスケーラブルなシステムの製作を行います。</p>
+		
+		<ul>
+			<li>新規ウェブシステムの開発</li>
+			<li>既存システムの改修・メンテナンス</li>
+			<li>数値計算ライブラリの製作</li>
+			<li>組み込みハードウェアの開発・製作</li>
+		</ul>
+		
+	</div>
+	
+	<div class="tab-pane fade" id="inquiry">
+		<div class="page-header">
+			<h1>
+				<span class="decoration-bar-1"></span>
+				<span class="decoration-bar-2"></span>
+				<span class="decoration-bar-3"></span>
+				お問い合わせ
+			</h1>
+		</div>
+		<p>以下のメールアドレスよりお問い合わせください。</p>
+		<blockquote>info [-at-] janom.co.jp</blockquote>
+		<p>（[-at-] をアットマークに置き換えてください）</p>
+	</div>
+	
+</div>
+
+<%- include('_include/99footer.ejs') %>
 
