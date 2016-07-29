@@ -1,8 +1,6 @@
 
 var childProcess = require('child_process');
-
-var del         = require('del');
-var runSequence = require('run-sequence');
+var del          = require('del');
 
 var gulp       = require('gulp');
 var concat     = require('gulp-concat');
@@ -13,6 +11,15 @@ var ejs        = require('gulp-ejs');
 var rename     = require('gulp-rename');
 var replace    = require('gulp-replace');
 var uglify     = require('gulp-uglify');
+var s3         = require('gulp-s3-upload')(require('./aws_credentials.json'));
+
+gulp.task('upload-staging', ['dist'], function() {
+	return gulp
+		.src('dist/**')
+		.pipe(s3({
+			Bucket: 'janom-web-staging',
+		}))
+});
 
 gulp.task('dist-clean', function() {
 	return del(['dist']);
@@ -57,13 +64,7 @@ gulp.task('dist-css', function() {
 		.pipe(gulp.dest('dist/css'))
 });
 
-gulp.task('dist', function(cb) {
-	return runSequence(
-		['dist-clean'],
-		['dist-copy', 'dist-ejs', 'dist-js', 'dist-css'],
-		cb
-	);
-});
+gulp.task('dist', ['dist-copy', 'dist-ejs', 'dist-js', 'dist-css']);
 
 gulp.task('default', ['dist']);
 
