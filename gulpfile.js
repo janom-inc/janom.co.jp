@@ -1,4 +1,6 @@
 
+var aws_credentials = require('./aws_credentials.json');
+
 var childProcess = require('child_process');
 var del          = require('del');
 
@@ -11,14 +13,19 @@ var ejs        = require('gulp-ejs');
 var rename     = require('gulp-rename');
 var replace    = require('gulp-replace');
 var uglify     = require('gulp-uglify');
-var s3         = require('gulp-s3-upload')(require('./aws_credentials.json'));
+var awspublish = require('gulp-awspublish');
 
 gulp.task('upload-staging', ['dist'], function() {
+	aws_credentials.params = {
+		Bucket: 'janom-web-staging',
+	};
+	var publisher = awspublish.create(aws_credentials);
 	return gulp
 		.src('dist/**')
-		.pipe(s3({
-			Bucket: 'janom-web-staging',
-		}))
+		.pipe(publisher.publish())
+		.pipe(publisher.cache())
+		.pipe(publisher.sync())
+		.pipe(awspublish.reporter());
 });
 
 gulp.task('dist-clean', function() {
