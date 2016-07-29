@@ -6,6 +6,7 @@ var del          = require('del');
 
 var gulp       = require('gulp');
 var concat     = require('gulp-concat');
+var connect    = require('gulp-connect');
 var sourcemaps = require('gulp-sourcemaps');
 var minifyCSS  = require('gulp-minify-css');
 var minifyHTML = require('gulp-minify-html');
@@ -78,6 +79,19 @@ gulp.task('dist-css', function() {
 		.pipe(sourcemaps.write('.'))
 		.pipe(gulp.dest('dist/css'))
 });
+
+gulp.task('watch', function() {
+	var watch = ['src/**'];
+	return gulp.watch(watch, ['dist']);
+});
+
+gulp.task('connect', ['dist'], function() {
+	return connect.server({
+		root: 'dist',
+	});
+});
+
+gulp.task('start', ['watch', 'connect']);
 
 gulp.task('dist', ['dist-copy', 'dist-ejs', 'dist-js', 'dist-css']);
 
