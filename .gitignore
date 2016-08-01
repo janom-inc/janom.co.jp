@@ -2,3 +2,4 @@
 /dist
 /aws_credentials.json
 /.awspublish-*
+npm-debug.log
