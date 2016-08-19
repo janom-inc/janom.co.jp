@@ -1,6 +1,8 @@
 janom-web
 =========
 
+[![wercker status](https://app.wercker.com/status/029ccfef3f0b1fafa5923d60e90cd79d/m/ "wercker status")](https://app.wercker.com/project/byKey/029ccfef3f0b1fafa5923d60e90cd79d)
+
 合同会社ジャノム公式ウェブサイトのソースコードリポジトリ。
 
 
@@ -8,20 +10,9 @@ janom-web
 初期セットアップ
 ----------------
 
-### 環境構築
-
 ```
 $ npm install
 $ npm install --global gulp-cli
-```
-
-### 設定ファイル作成
-
-#### AWS認証情報
-
-```
-$ cp aws_credentials.example.json aws_credentials.json
-$ editor aws_credentials.json
 ```
 
 
@@ -49,27 +40,8 @@ $ gulp dist
 アップロード（公開）
 --------------------
 
-本リポジトリの内容は、Amazon S3 上にアップロードすることで公開されます。
-
-### ステージング環境
-
-```
-$ gulp upload-staging
-```
-
-これで http://staging.janom.co.jp/ が更新されればOK。
-
-URL は Amazon S3 のウェブサーバに向けられており、S3 のウェブサイトホスティング機能を利用して閲覧することができます。
-
-### 本番環境
-
-```
-$ gulp upload-production
-```
-
-これで https://janom.co.jp/ が更新されればOK。
-
-URL は CloudFlare のプロキシサーバに向けられており、裏側で S3 へアクセスが飛ぶようになっています。
+`master` および `staging` ブランチに新しいコミットがなされると、
+Wercker が自動的にビルドを行い Amazon S3 に対してアップロードを行い公開されます。
 
 
 
