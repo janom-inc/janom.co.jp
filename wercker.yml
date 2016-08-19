@@ -2,14 +2,10 @@ box: nodesource/trusty
 build:
   steps:
     - npm-install
-    - script:
-        name: cleanup working directory.
-        code: |
-          gulp dist-clean
-    - script:
-        name: build.
-        code: |
-          gulp dist
+    - gulp:
+        tasks: dist-clean
+    - gulp:
+        tasks: dist
 deploy:
   steps:
     - s3sync:
