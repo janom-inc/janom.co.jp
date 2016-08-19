@@ -1,5 +1,5 @@
 
-var aws_credentials = require('./aws_credentials.json');
+//var aws_credentials = require('./aws_credentials.json');
 
 var childProcess = require('child_process');
 var del          = require('del');
