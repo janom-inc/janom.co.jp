@@ -2,9 +2,9 @@ box: nodesource/trusty
 build:
   steps:
     - npm-install
-    - gulp:
+    - hgen/gulp:
         tasks: dist-clean
-    - gulp:
+    - hgen/gulp:
         tasks: dist
 deploy:
   steps:
