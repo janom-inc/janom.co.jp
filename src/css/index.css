@@ -15,6 +15,12 @@ footer {
 	padding: 20px 0px 10px 0px;
 	color: white;
 }
+footer a {
+	color: #fc6;
+}
+footer a:hover {
+	color: #c60;
+}
 
 .decoration-bar-1, .decoration-bar-2, .decoration-bar-3 {
 	background-color: #EEE;
