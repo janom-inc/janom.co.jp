@@ -66,7 +66,7 @@ gulp.task('dist', gulp.series('dist-copy', 'dist-ejs', 'dist-js', 'dist-css'));
 
 gulp.task('watch', function() {
 	var watch = ['src/**'];
-	return gulp.watch(watch, ['dist']);
+	return gulp.watch(watch, gulp.series('dist'));
 });
 
 gulp.task('connect', gulp.series('dist', function() {
@@ -75,7 +75,7 @@ gulp.task('connect', gulp.series('dist', function() {
 	});
 }));
 
-gulp.task('start', gulp.series('watch', 'connect'));
+gulp.task('start', gulp.parallel('watch', 'connect'));
 
 gulp.task('default', gulp.series('dist'));
 
