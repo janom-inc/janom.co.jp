@@ -6,7 +6,7 @@ var gulp       = require('gulp');
 var concat     = require('gulp-concat');
 var connect    = require('gulp-connect');
 var sourcemaps = require('gulp-sourcemaps');
-var minifyCSS  = require('gulp-minify-css');
+var cleanCSS   = require('gulp-clean-css');
 var minifyHTML = require('gulp-minify-html');
 var ejs        = require('gulp-ejs');
 var rename     = require('gulp-rename');
@@ -57,7 +57,7 @@ gulp.task('dist-css', function() {
 		.src('src/css/*.css')
 		.pipe(sourcemaps.init())
 		.pipe(concat('bundle.min.css'))
-		.pipe(minifyCSS())
+		.pipe(cleanCSS())
 		.pipe(sourcemaps.write('.'))
 		.pipe(gulp.dest('dist/css'))
 });
