@@ -17,7 +17,7 @@
     "gulp-clean-css": "^4.3.0",
     "gulp-concat": "^2.6.0",
     "gulp-connect": "^5.0.0",
-    "gulp-ejs": "^2.1.2",
+    "gulp-ejs": "^5.1.0",
     "gulp-minify-html": "^1.0.6",
     "gulp-rename": "^1.2.2",
     "gulp-replace": "^0.5.4",
