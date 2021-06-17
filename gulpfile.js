@@ -32,7 +32,7 @@ gulp.task('commit-hash', function(cb) {
 	});
 });
 
-gulp.task('dist-ejs', ['commit-hash'], function() {
+gulp.task('dist-ejs', gulp.series('commit-hash', function() {
 	return gulp
 		.src('src/ejs/**/*.ejs')
 		.pipe(ejs())
@@ -40,7 +40,7 @@ gulp.task('dist-ejs', ['commit-hash'], function() {
 		.pipe(minifyHTML({}))
 		.pipe(rename({extname: '.html'}))
 		.pipe(gulp.dest('dist'))
-});
+}));
 
 gulp.task('dist-js', function() {
 	return gulp
@@ -62,20 +62,20 @@ gulp.task('dist-css', function() {
 		.pipe(gulp.dest('dist/css'))
 });
 
+gulp.task('dist', gulp.series('dist-copy', 'dist-ejs', 'dist-js', 'dist-css'));
+
 gulp.task('watch', function() {
 	var watch = ['src/**'];
 	return gulp.watch(watch, ['dist']);
 });
 
-gulp.task('connect', ['dist'], function() {
+gulp.task('connect', gulp.series('dist', function() {
 	return connect.server({
 		root: 'dist',
 	});
-});
+}));
 
-gulp.task('start', ['watch', 'connect']);
+gulp.task('start', gulp.series('watch', 'connect'));
 
-gulp.task('dist', ['dist-copy', 'dist-ejs', 'dist-js', 'dist-css']);
-
-gulp.task('default', ['dist']);
+gulp.task('default', gulp.series('dist'));
 

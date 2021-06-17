@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "del": "^2.2.1",
-    "gulp": "^3.9.1",
+    "gulp": "^4.0.2",
     "gulp-concat": "^2.6.0",
     "gulp-connect": "^5.0.0",
     "gulp-ejs": "^2.1.2",
