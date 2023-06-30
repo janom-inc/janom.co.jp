@@ -1,8 +1,6 @@
 janom-web
 =========
 
-[![wercker status](https://app.wercker.com/status/029ccfef3f0b1fafa5923d60e90cd79d/m/ "wercker status")](https://app.wercker.com/project/byKey/029ccfef3f0b1fafa5923d60e90cd79d)
-
 合同会社ジャノム公式ウェブサイトのソースコードリポジトリ。
 
 
@@ -11,8 +9,7 @@ janom-web
 ----------------
 
 ```
-$ npm install
-$ npm install --global gulp-cli
+$ npm ci
 ```
 
 
@@ -21,7 +18,7 @@ $ npm install --global gulp-cli
 --------
 
 ```
-$ gulp start
+$ npm start
 ```
 
 これで http://localhost:8080/ にアクセスすると、現在のリポジトリの内容が表示されます。
@@ -30,7 +27,7 @@ $ gulp start
 ビルドのみ行う場合には
 
 ```
-$ gulp dist
+$ npm run build
 ```
 
 とします。
@@ -40,8 +37,7 @@ $ gulp dist
 アップロード（公開）
 --------------------
 
-`master` および `staging` ブランチに新しいコミットがなされると、
-Wercker が自動的にビルドを行い Amazon S3 に対してアップロードを行い公開されます。
+`master` ブランチに新しいコミットがなされると GitHub Actions 上で自動的にビルドが行われ、GitHub Pages を経由してページが公開されます。
 
 
 
