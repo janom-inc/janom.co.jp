@@ -4,7 +4,8 @@
   "description": "Janom LLC official web site.",
   "author": "Masahiko Hyuga <mhyuga@janom.co.jp>",
   "scripts": {
-    "start": "gulp"
+    "start": "gulp start",
+    "build": "gulp dist"
   },
   "keywords": [],
   "repository": {
