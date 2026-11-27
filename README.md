@@ -74,4 +74,4 @@ scripts/      ビルド後処理 (旧 URL `*.html` からのリダイレクト�
 アップロード（公開）
 --------------------
 
-`master` ブランチに新しいコミットがなされると GitHub Actions 上で自動的にビルドが行われ、`gh-pages` ブランチを経由して GitHub Pages で公開されます。
+`main` ブランチに新しいコミットがなされると GitHub Actions 上で自動的にビルドが行われ、`gh-pages` ブランチを経由して GitHub Pages で公開されます。
