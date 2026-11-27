@@ -1,30 +1,35 @@
 {
   "name": "janom.co.jp",
-  "version": "0.0.0",
+  "version": "1.0.0",
+  "private": true,
   "description": "Janom LLC official web site.",
   "author": "Masahiko Hyuga <mhyuga@janom.co.jp>",
-  "scripts": {
-    "start": "gulp start",
-    "build": "gulp dist"
-  },
-  "keywords": [],
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/janom-inc/janom.co.jp.git"
+  },
+  "engines": {
+    "node": ">=20.9.0"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "start": "next dev",
+    "build": "next build && node scripts/legacy-redirects.mjs",
+    "serve": "python3 -m http.server 8080 --directory out",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "del": "^2.2.1",
-    "gulp": "^4.0.2",
-    "gulp-clean-css": "^4.3.0",
-    "gulp-cli": "^2.3.0",
-    "gulp-concat": "^2.6.0",
-    "gulp-connect": "^5.0.0",
-    "gulp-ejs": "^5.1.0",
-    "gulp-minify-html": "^1.0.6",
-    "gulp-rename": "^1.2.2",
-    "gulp-replace": "^0.5.4",
-    "gulp-sourcemaps": "^2.6.4",
-    "gulp-uglify": "^1.5.4",
-    "run-sequence": "^1.2.2"
+    "next": "^16.4.6",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "^24.19.4",
+    "@types/react": "^19.3.3",
+    "@types/react-dom": "^19.3.0",
+    "eslint": "^10.15.0",
+    "eslint-config-next": "^16.4.6",
+    "typescript": "^5.9.3"
   }
 }
