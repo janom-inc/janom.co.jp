@@ -1,7 +1,6 @@
-import ExternalLink from "@/components/ExternalLink";
 import PageHeader from "@/components/PageHeader";
 import { formatDate, news } from "@/lib/news";
-import { SITE_NAME, TWITTER_ACCOUNT } from "@/lib/site";
+import { SITE_NAME } from "@/lib/site";
 
 export default function HomePage() {
   return (
@@ -25,27 +24,19 @@ export default function HomePage() {
 
       <PageHeader level={2}>お知らせ</PageHeader>
 
-      <div className="home-news">
-        <table className="table news-table">
-          <caption className="text-center">最近の活動</caption>
-          <tbody>
-            {news.map((item) => (
-              <tr key={`${item.date}-${formatDate(item.date)}`}>
-                <th>
-                  <time dateTime={item.date}>{formatDate(item.date)}</time>
-                </th>
-                <td>{item.body}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-        <aside className="social-box">
-          <p>最新情報は X (旧 Twitter) でも発信しています。</p>
-          <p>
-            <ExternalLink href={`https://x.com/${TWITTER_ACCOUNT}`}>@{TWITTER_ACCOUNT}</ExternalLink>
-          </p>
-        </aside>
-      </div>
+      <table className="table news-table">
+        <caption className="text-center">最近の活動</caption>
+        <tbody>
+          {news.map((item) => (
+            <tr key={`${item.date}-${formatDate(item.date)}`}>
+              <th>
+                <time dateTime={item.date}>{formatDate(item.date)}</time>
+              </th>
+              <td>{item.body}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </>
   );
 }

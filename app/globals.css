@@ -484,24 +484,9 @@ blockquote {
   }
 }
 
-.home-news {
-  display: grid;
-  gap: 30px;
-  grid-template-columns: 1fr;
-}
-@media (min-width: 992px) {
-  .home-news {
-    grid-template-columns: 2fr 1fr;
-  }
-}
 .news-table th {
   width: 100px;
   white-space: nowrap;
-}
-.social-box {
-  padding: 15px;
-  border: 1px solid var(--color-border);
-  border-radius: 4px;
 }
 
 /* ---------- Misc ---------- */
