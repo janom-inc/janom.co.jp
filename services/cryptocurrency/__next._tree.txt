@@ -1,4 +1,4 @@
-:HL["/_next/static/chunks/23lqw22oeyxln.css","style"]
+:HL["/_next/static/chunks/3aygjhkl9y22l.css","style"]
 :HL["/img/error_eyecatch.png","image"]
 :HL["/img/services/coingift_logo.png","image"]
 :HL["/img/services/cointip_logo.png","image"]
@@ -9,4 +9,4 @@
 3:[["children",{"s":"__PAGE__","h":160}]]
 2:[["children",{"s":"cryptocurrency","h":96,"c":"$Q3"}]]
 1:[["children",{"s":"services","h":96,"c":"$Q2"}]]
-0:{"b":"3GHpFGiQGpRD8uLbz4EAR","t":{"t":{"s":"","h":80,"c":"$Q1"}}}
+0:{"b":"f5oaK70qXTWw5oTbzNCDs","t":{"t":{"s":"","h":80,"c":"$Q1"}}}
