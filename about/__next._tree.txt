@@ -1,0 +1,5 @@
+:HL["/_next/static/chunks/23lqw22oeyxln.css","style"]
+:HL["/img/error_eyecatch.png","image"]
+2:[["children",{"s":"__PAGE__","h":160}]]
+1:[["children",{"s":"about","h":96,"c":"$Q2"}]]
+0:{"b":"iBrWVOyVc3ebvQZ6uQCDQ","t":{"t":{"s":"","h":80,"c":"$Q1"}}}
