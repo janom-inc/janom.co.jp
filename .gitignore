@@ -1,5 +1,8 @@
 /node_modules
+/.next
+/out
 /dist
-/aws_credentials.json
-/.awspublish-*
-npm-debug.log
+next-env.d.ts
+*.tsbuildinfo
+npm-debug.log*
+.DS_Store
